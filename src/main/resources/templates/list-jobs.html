@@ -10,35 +10,7 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <th:block th:each="job : ${jobs}">
-        <table class="job-listing">
-            <tr>
-                <td><strong>ID</strong></td>
-                <td th:text="${job.getId()}"></td>
-            </tr>
-            <tr>
-                <td><strong>Name</strong></td>
-                <td th:text="${job.getName()}"></td>
-            </tr>
-            <tr>
-                <td><strong>Employer</strong></td>
-                <td th:text="${job.getEmployer()}"></td>
-            </tr>
-            <tr>
-                <td><strong>Location</strong></td>
-                <td th:text="${job.getLocation()}"></td>
-            </tr>
-            <tr>
-                <td><strong>Position Type</strong></td>
-                <td th:text="${job.getPositionType()}"></td>
-            </tr>
-            <tr>
-                <td><strong>Skill</strong></td>
-                <td th:text="${job.getCoreCompetency()}"></td>
-            </tr>
-        </table>
-
-    </th:block>
+    <p th:replace="~{fragments :: jobListing}"></p>
 
 </div>
 
